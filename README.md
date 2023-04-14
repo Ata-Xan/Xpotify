@@ -1,0 +1,1 @@
+Xpotify is a collaborative music playing system that allows users to share and listen to music together. Built with Django and React
