@@ -20,5 +20,5 @@ from .views import RoomList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RoomList.as_view()),
+    path('api/', RoomList.as_view()),
 ]
