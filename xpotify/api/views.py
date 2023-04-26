@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from rest_framework import generics
-from .serializers import RoomSerializer
+from rest_framework import generics, status
+from .serializers import RoomSerializer, CreateRoomSerializer
 from .models import Room
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 class RoomList(generics.ListCreateAPIView):
     queryset = Room.objects.all()
@@ -10,3 +12,9 @@ class RoomList(generics.ListCreateAPIView):
 class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+
+
+class CreateRoomView(APIView):
+    serializer_class = CreateRoomSerializer
+    def  post(self, request, format=None):
+        pass
